@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { View, Text } from 'react-native'
-import { Background, Button, Input, Spinner, Profile, CardItem, Card } from './components/common/Index.js'
+import { View, Text, Image } from 'react-native'
+import { Background, Button, Input, Spinner, Profile, CardItem, Card, PeaceOut, ProfileAvatar } from './components/common/Index.js'
 import firebase from 'firebase'
 import LoginForm from './components/Login'
 console.disableYellowBox = true
@@ -32,11 +32,12 @@ class App extends Component{
     switch (this.state.loggedIn){
       case true:
         return (
-          <CardItem>
-            <Button onPress= {() => firebase.auth().signOut()}>
-              Log Out?
-            </Button>
-          </CardItem>
+          <View style = {styles.navStyle}>
+            <CardItem>
+              <PeaceOut onPress= {() => firebase.auth().signOut()} />
+              <ProfileAvatar loggedIn= {this.state.loggedIn} style= {styles.avatar} source= {require('../images/profile-avatar.png')} />
+            </CardItem>
+          </View>
         )
       case false:
         return <LoginForm />
@@ -47,13 +48,28 @@ class App extends Component{
 
   render(){
     return (
-      <View>
+      <View style= {styles.containerStyle}>
+        <Text>Belaytionship</Text>
         <Background headerText= "Belaytionship"/>
         {this.renderContent()}
-        <Text/>
       </View>
     )
   }
+}
+const styles = {
+  containerStyle: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'flex-start'
+  },
+  navStyle: {
+    flex: 1,
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between'
+  },
+
 }
 
 

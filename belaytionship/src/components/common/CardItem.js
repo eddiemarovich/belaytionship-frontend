@@ -14,9 +14,10 @@ const style = {
   containerStyle: {
     // borderBottomWidth: 1,
     padding: 20,
-    justifyContent: 'flex-start',
+    justifyContent: 'flex-end',
     flexDirection: 'row',
-    position: 'relative'
+    position: 'relative',
+    color: 'white'
   }
 }
 
