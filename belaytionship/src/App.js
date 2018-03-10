@@ -10,7 +10,7 @@ console.disableYellowBox = true
 class App extends Component{
 
   state = {
-    loggedIn: null
+    loggedIn: null,
   }
 
   componentDidMount(){
