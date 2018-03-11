@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text } from 'react-native'
+import { Text, Image } from 'react-native'
 import  firebase  from 'firebase'
 import { Button, Card, CardItem, Input, Spinner  } from './common/Index.js'
 
@@ -38,7 +38,7 @@ class LoginForm extends Component {
 
   renderButton () {
     if (this.state.loading){
-      return <Spinner size= 'small'/>
+      return <Spinner size= 'large'/>
     }
     return (
       <Button onPress= {this.onButtonPress.bind(this)}>
@@ -49,7 +49,9 @@ class LoginForm extends Component {
 
   render () {
     return (
-      <Card>
+      <Card >
+        <Text style= {styles.titleStyle}>Belaytionship</Text>
+        <Image style= {styles.imageStyle} source = {require('../../images/belaytionship-logo.png')}/>
         <CardItem>
           <Input
             placeholder= "user@gmail.com"
@@ -85,6 +87,16 @@ const styles = {
     fontSize: 20,
     alignSelf: 'center',
     color: 'red'
+  },
+  titleStyle: {
+    fontSize: 45,
+    color: 'white',
+    alignSelf: 'center',
+    paddingTop: 30,
+    paddingBottom: 25
+  },
+  imageStyle: {
+    alignSelf: 'center'
   }
 }
 
