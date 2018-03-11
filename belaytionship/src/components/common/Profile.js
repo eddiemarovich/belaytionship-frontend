@@ -5,9 +5,9 @@ import { View, TextInput, Text, Image } from 'react-native'
 
 class Profile extends Component {
 
-  getUsers(id){
-    
-  }
+  // getUsers(id){
+  //
+  // }
 
 
   render() {

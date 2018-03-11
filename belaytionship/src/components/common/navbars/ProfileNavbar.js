@@ -1,11 +1,11 @@
 import React from 'react'
 import { View } from 'react-native'
-import { ProfileAvatar, Carabiner, PeaceOut } from '../Index.js'
+import { ProfileAvatar, Carabiner, PeaceOut } from './buttons/index.js'
 
 const ProfileNavbar = ({ loggedIn,onPress }) => {
-  const {navStyle, avatarStyle, peaceOutStyle, carabinerStyle } = styles
+  const { avatarStyle, peaceOutStyle, carabinerStyle } = styles
   return (
-    <View style= {styles.navStyle}>
+    <View>
       <PeaceOut onPress= {onPress} style = {styles.peaceOutStyle}/>
       <ProfileAvatar style = {styles.avatarStyle}/>
       <Carabiner style = {styles.carabinerStyle}/>
@@ -13,10 +13,6 @@ const ProfileNavbar = ({ loggedIn,onPress }) => {
   )
 }
 const styles = {
-  navStyle: {
-    flex: 1,
-    flexDirection: 'column'
-  },
   peaceOutStyle: {
     display: 'flex',
     flexDirection: 'row',

@@ -35,7 +35,7 @@ class App extends Component{
         return (
           <View style = {styles.navStyle}>
             <CardItem>
-              <ProfileNavbar loggedIn= {this.state.loggedIn} onPress= {() => firebase.auth().signOut()} />
+              <ProfileNavbar onPress= {() => firebase.auth().signOut()} />
             </CardItem>
           </View>
         )
